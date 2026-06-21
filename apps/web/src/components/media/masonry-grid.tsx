@@ -1,0 +1,15 @@
+import { ReactNode } from 'react';
+import { cn } from '@/lib/utils';
+
+interface MasonryGridProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export function MasonryGrid({ children, className }: MasonryGridProps) {
+  return <div className={cn('masonry-grid', className)}>{children}</div>;
+}
+
+export function MasonryItem({ children, className }: { children: ReactNode; className?: string }) {
+  return <div className={cn('masonry-item', className)}>{children}</div>;
+}

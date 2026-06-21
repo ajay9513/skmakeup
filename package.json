@@ -1,0 +1,27 @@
+{
+  "name": "sk-makeup-artist",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SK Makeup Artist — luxury makeup artist platform",
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:admin": "turbo run dev --filter=@sk-makeup/admin",
+    "dev:api": "turbo run dev --filter=@sk-makeup/api",
+    "dev:web": "turbo run dev --filter=@sk-makeup/web",
+    "build": "turbo run build",
+    "build:api": "turbo run build --filter=@sk-makeup/api",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "seed": "turbo run seed --filter=@sk-makeup/api",
+    "test:api": "npx tsx scripts/api-smoke-test.ts"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}

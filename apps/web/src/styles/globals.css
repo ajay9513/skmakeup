@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-ivory font-sans text-charcoal antialiased;
+    background-color: var(--brand-ivory, #FAF8F5);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-charcoal;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold/50 ring-offset-2 ring-offset-ivory;
+  }
+}
+
+@layer components {
+  .luxury-heading {
+    @apply font-serif font-medium tracking-tight text-charcoal;
+  }
+
+  .luxury-subheading {
+    @apply text-sm uppercase tracking-luxury text-gold;
+  }
+
+  .luxury-divider {
+    @apply mx-auto h-px w-16 bg-gold/40;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .container-luxury {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .masonry-grid {
+    column-gap: 1rem;
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .masonry-grid {
+      columns: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .masonry-grid {
+      columns: 3;
+      column-gap: 1.5rem;
+    }
+
+    .masonry-item {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .masonry-grid {
+      columns: 4;
+    }
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/20 bg-white/70 shadow-luxury backdrop-blur-xl;
+  }
+
+  .glass-dark {
+    @apply rounded-2xl border border-white/10 bg-charcoal/80 shadow-editorial backdrop-blur-xl;
+  }
+
+  .premium-gradient {
+    @apply bg-gradient-to-br from-champagne via-ivory to-champagne-dark;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

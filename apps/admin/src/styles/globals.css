@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-charcoal-light/20;
+  }
+
+  body {
+    @apply bg-ivory text-charcoal font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .luxury-card {
+    @apply bg-white rounded-xl border border-charcoal-light/10 shadow-luxury;
+  }
+
+  .luxury-input {
+    @apply w-full rounded-lg border border-charcoal-light/20 bg-white px-4 py-2.5 text-sm
+           placeholder:text-charcoal/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition;
+  }
+
+  .luxury-btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-gold px-4 py-2.5 text-sm font-medium text-white
+           hover:bg-gold-dark focus:outline-none focus:ring-2 focus:ring-gold/40 transition disabled:opacity-50;
+  }
+
+  .luxury-btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-charcoal-light/20 bg-white px-4 py-2.5
+           text-sm font-medium text-charcoal hover:bg-ivory-dark focus:outline-none focus:ring-2 focus:ring-gold/20 transition;
+  }
+}
