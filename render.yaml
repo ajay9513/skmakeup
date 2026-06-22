@@ -1,0 +1,26 @@
+# Render Blueprint — API only (deploy web/admin separately on Vercel)
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: sk-makeup-api
+    runtime: node
+    plan: starter
+    region: singapore
+    rootDir: .
+    buildCommand: >-
+      corepack enable &&
+      corepack prepare pnpm@9.15.0 --activate &&
+      pnpm install --frozen-lockfile &&
+      pnpm run build:api:prod
+    startCommand: pnpm --filter @sk-makeup/api start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: PNPM_VERSION
+        value: "9.15.0"
+      # Set in Render dashboard (never commit secrets):
+      # MONGODB_URI, JWT_SECRET, JWT_REFRESH_SECRET, CLOUDINARY_*, WEB_URL, ADMIN_URL, CORS_ORIGINS, etc.

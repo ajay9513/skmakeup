@@ -10,6 +10,8 @@
     "dev:web": "turbo run dev --filter=@sk-makeup/web",
     "build": "turbo run build",
     "build:api": "turbo run build --filter=@sk-makeup/api",
+    "build:api:prod": "pnpm --filter @sk-makeup/shared build && pnpm --filter @sk-makeup/api build",
+    "start:api": "pnpm --filter @sk-makeup/api start",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "seed": "turbo run seed --filter=@sk-makeup/api",
